@@ -16,8 +16,27 @@ def find_max_profit(prices):
       if tomorrow - today > max_profit:
         max_profit = tomorrow - today
   return max_profit
-
+# Time Complexity: O(N^2)
 print('Max profit: ', find_max_profit(prices))
+
+# Another take on the same algorithm that aims to reduce time complexity
+
+def faster_max_profit(prices):
+  # Step 1: initialize variables needed to perform comparisons
+  max_profit = 0
+  # Step 2: set lowest price to first index because it is automatically current lowest
+  lowest_price = prices[0]
+  # Step 3: begin for loop of prices array (no weird math as there are no sub-loops)
+  for price in prices:
+    # Step 4: compare lowest price with current price to determine which is smaller
+    lowest_price = min(lowest_price, price)
+    # Step 5: subtract lowest price from current price to calculate loss/gain
+    price_difference = price - lowest_price
+    # Step 6: determine max profit by comparing every single price difference
+    max_profit = max(max_profit, price_difference)
+  return max_profit
+
+print('Faster max profit: ', faster_max_profit(prices))
 
 # if __name__ == '__main__':
 #   # This is just some code to accept inputs from the command line
