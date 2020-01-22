@@ -35,7 +35,7 @@ def faster_max_profit(prices):
     # Step 6: determine max profit by comparing current max to price differences stored in memory (hint: max makes this easy)
     max_profit = max(max_profit, price_difference)
   return max_profit
-
+# Time Complexity: O(N)
 print('Faster max profit: ', faster_max_profit(prices))
 
 # if __name__ == '__main__':
