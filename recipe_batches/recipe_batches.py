@@ -15,7 +15,7 @@ def recipe_batches(recipe, ingredients):
       if recipe_value > ingredient_value:
         print('Sorry, you have to buy some groceries before you can make this!')
         return 0
-      # Step 4: otherwise, divide total ingredients by amount demaned in recipe to determine how many batches can be made
+      # Step 4: otherwise, divide total ingredients by amount required in recipe to determine how many batches can be made
       else:
         batches = ingredient_value // recipe_value
         print(f"{batches} batches can be made from the available ingredients: {ingredients}.")
