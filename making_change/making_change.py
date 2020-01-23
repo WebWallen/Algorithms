@@ -3,8 +3,16 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+  ways = [0] * (amount + 1)
+  ways[0] = 1
+  for denomination in denominations:
+    for total in range(denomination, amount + 1):
+      ways[total] += ways[total - denomination]
+  return ways[amount]
 
+print(making_change(30, [1, 5, 10, 25, 50]))
+print(making_change(100, [1, 5, 10, 25, 50]))
+print(making_change(300, [1, 5, 10, 25, 50]))
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
