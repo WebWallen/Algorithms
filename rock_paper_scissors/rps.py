@@ -27,6 +27,25 @@ def rock_paper_scissors(n):
     combinations = list(permutations(two_moves))
     for combo in combinations:
       print(combo)
+    two_moves.remove("Scissors")
+    two_moves.append("Paper")
+    combinations = list(permutations(two_moves))
+    for combo in combinations:
+      print(combo)
+    two_moves.remove("Paper")
+    two_moves.remove("Paper")
+    two_moves.append("Scissors")
+    two_moves.append("Scissors")
+    combinations = list(permutations(two_moves))
+    for combo in combinations:
+      print(combo)
+    two_moves.remove("Scissors")
+    two_moves.remove("Scissors")
+    two_moves.append("Rock")
+    two_moves.append("Rock")
+    combinations = list(permutations(two_moves))
+    for combo in combinations:
+      print(combo)
 
 rock_paper_scissors(2)
 
