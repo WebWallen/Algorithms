@@ -9,7 +9,7 @@ def eating_cookies(n):
   # If n = 1 (1 way to eat). If n = 2 (2 ways to eat)
   if n <= 2:
     return n
-  # N = 20. 19, 18, 17. 18, 17, 16. 17, 16, 15... (three callbacks for each num to match the 3 above?)
+  # N = 20. 19, 18, 17. 18, 17, 16. 17, 16, 15... (three callbacks for each num to match the three returns above?)
   return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
 
 # I can't explain exactly why this works but it does. Same formula we used for Fibonacci with one extra equation.
