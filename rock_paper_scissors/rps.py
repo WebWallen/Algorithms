@@ -6,46 +6,14 @@ import sys
 
 def rock_paper_scissors(n):
   from itertools import permutations
-  two_moves = []
-  # three_moves = []
-  # four_moves = []
-  # five_moves = []
-  # six_moves = []
   if n == 2:
-    two_moves.append("Rock")
-    two_moves.append("Paper")
-    combinations = list(permutations(two_moves))
-    for combo in combinations:
-      print(combo)
-    two_moves.remove("Paper")
-    two_moves.append("Scissors")
-    combinations = list(permutations(two_moves))
-    for combo in combinations:
-      print(combo)
-    two_moves.remove("Rock")
-    two_moves.append("Paper")
-    combinations = list(permutations(two_moves))
-    for combo in combinations:
-      print(combo)
-    two_moves.remove("Scissors")
-    two_moves.append("Paper")
-    combinations = list(permutations(two_moves))
-    for combo in combinations:
-      print(combo)
-    two_moves.remove("Paper")
-    two_moves.remove("Paper")
-    two_moves.append("Scissors")
-    two_moves.append("Scissors")
-    combinations = list(permutations(two_moves))
-    for combo in combinations:
-      print(combo)
-    two_moves.remove("Scissors")
-    two_moves.remove("Scissors")
-    two_moves.append("Rock")
-    two_moves.append("Rock")
-    combinations = list(permutations(two_moves))
-    for combo in combinations:
-      print(combo)
+    two_moves = ['RP', 'RS', 'RR', 'PR', 'PS', 'PP', 'SP', 'SR', 'SS']
+    for move in two_moves:
+      if move[0] == move[1]:
+        print(move)
+      else: 
+        move = list(permutations(move))
+        print(move)
 
 rock_paper_scissors(2)
 
