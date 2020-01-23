@@ -2,13 +2,15 @@
 
 import sys
 
-def making_change(amount, denominations):
-  ways = [0] * (amount + 1)
-  ways[0] = 1
-  for denomination in denominations:
-    for total in range(denomination, amount + 1):
+def making_change(amount, denominations): # (30, [1, 5, 10, 25, 50])
+  ways = [0] * (amount + 1) # 0 * 30 + 1 = 0 (why???)
+  ways[0] = 1 # 1
+  for denomination in denominations: # for each coin amount in this list...
+    for total in range(denomination, amount + 1): 
       ways[total] += ways[total - denomination]
   return ways[amount]
+
+# Trying to explain this to myself but I'm just not getting it. At least it works. Can reference/update as needed.
 
 print(making_change(30, [1, 5, 10, 25, 50]))
 print(making_change(100, [1, 5, 10, 25, 50]))
